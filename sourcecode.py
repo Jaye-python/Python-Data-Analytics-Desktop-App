@@ -14,7 +14,7 @@ mbg = '#484a49'
 
 root = tk.Tk()
 root.title(' Free Basic Data Analytics App by WebX Consulting')
-# root.iconbitmap('favicon.ico')
+root.iconbitmap('favicon.ico')
 root.geometry('1000x600')
 root.configure(background=mbg)
 
@@ -139,25 +139,6 @@ def look():
     except:
         messagebox.showinfo('Imports Required', 'Please import Table 1 and 2 then indicate common column name and record to Vlook up')
 
-
-def currdata():
-    global ed
-    try:
-        e.delete(1.0, END)
-        e.insert(1.0, ed)
-    except:
-        messagebox.showinfo('Import Required', 'Please import Table 1 to see its records')
-
-
-def seconddata():
-    global d2
-    try:
-        e.delete(1.0, END)
-        e.insert(1.0, d2)
-    except:
-        messagebox.showinfo('Import Required', 'Please import Table 2 to see its records')
-
-
 def export():
     
     p = 'Export_List_' + str(date.today())+'.csv'
@@ -225,20 +206,6 @@ def dup():
         messagebox.showinfo(' Duplicates Dropped', 'Duplicate values dropped')
     except:
         messagebox.showinfo('Info required', 'Please import Table 1 and indicate name of column having duplicate records')
-
-
-def describe():
-    
-    global ed
-    # global ed
-
-    try:
-        d = ed.describe()
-        # extext.set(value= 'Export\n' + str(len(d)) + '\nrows')
-        e.delete(1.0, END)
-        e.insert(1.0, d)
-    except:
-        messagebox.showinfo('Table 1 Not Imported', 'Please import Table 1 to view its five number summary')
 
 
 def info():
@@ -372,7 +339,3 @@ y.place(relheight=0.61, relwidth=0.71, relx=0.219, rely=0.194,)
 e = tk.Text(y,  )
 e.place(relheight=0.96, relwidth=0.96, relx=0.02, rely=0.02,)
 
-
-  
-
-root.mainloop()
